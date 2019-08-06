@@ -9,6 +9,9 @@ import time
 import MySQLdb as mysql
 
 
+ip = '10.235.226.152'
+
+
 def shouye(zhanghao='游客'):
     """游戏首页"""
     root = Tk()
@@ -327,7 +330,7 @@ def kaishi(zhanghao, defen=3, changci=10, liansheng=0, gaolian=0):
 def bangdan(mingzi, gaofen, gaolian):
     """存入榜单"""
     try:
-        db = mysql.connect('localhost', 'root', '123456', 'game', charset='utf8')
+        db = mysql.connect(ip, 'root', '123456', 'game', charset='utf8')
     except:
         return 0
     cursor = db.cursor()
@@ -344,7 +347,7 @@ def bangdan(mingzi, gaofen, gaolian):
 def bang(shuliang):
     """读取榜单"""
     try:
-        db = mysql.connect('localhost', 'root', '123456', 'game', charset='utf8')
+        db = mysql.connect(ip, 'root', '123456', 'game', charset='utf8')
     except:
         return 0
     cursor = db.cursor()
